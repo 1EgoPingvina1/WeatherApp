@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-image">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="location-input" placeholder="Enter your location">
+                <button id="search-button"><i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="error">
+                <p>Invalid city name</p>
+            </div>
+            <div class="weather">
+
+                <div class="weather-icon">
+                    <img style="width: 80px; height: 80px;" src="../images/weather-icons/clear-sky.png" >
+                </div>
+                
+                <h1 class="main"></h1>
+                <h2 class="city"></h2>
+                <h1 class="temp"></h1>
+                <div class="details">
+                    <div class="col">
+                        <img width="30px" height="30px" src="../images/weather-icons/humidity_purple.png" alt="">
+                        <div class="">
+                            <p class="humidity">0</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img width="30px" height="30px" src="../images/weather-icons/windy.png" alt="">
+
+                        <div class="">
+                            <p class="wind">0</p>
+                            <p>Wind speed</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+      
+        const firebaseConfig = {
+          apiKey: "AIzaSyDt5ttt2Iey45HSBqwitAEJ3MzBUQd9p-Q",
+          authDomain: "plated-hearth-388918.firebaseapp.com",
+          projectId: "plated-hearth-388918",
+          storageBucket: "plated-hearth-388918.appspot.com",
+          messagingSenderId: "1031757520723",
+          appId: "1:1031757520723:web:c35f99537cda828abe8ba6",
+          measurementId: "G-Q7M88REH5M"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+</body>
+</html>
